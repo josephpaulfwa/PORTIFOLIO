@@ -1,0 +1,200 @@
+/* --- DESIGN SYSTEM --- */
+:root {
+    /* --- FUTURISTIC PURPLE THEME --- */
+    --bg-main: #371d57;    /* The "Void" - almost black purple */
+    --bg-card: #18042c;    /* Deep Plum - slightly lighter */
+    --text-head: #e9d5ff;  /* Pale Lavender - easier on eyes than pure white */
+    --text-body: #fbfbfb;  /* Muted cool grey */
+    --accent: #894ac1;     /* Neon Fuchsia/Violet - The "Cyber" pop */
+    --font-main: system-ui, -apple-system, sans-serif;
+}
+
+/* --- RESET & GLOBAL --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+/* --- NAVIGATION BAR --- */
+.navbar {
+    position: fixed;  /* Sticks to the top of the screen */
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.2rem 0; /* Vertical spacing */
+    
+    /* THE GLASS EFFECT */
+    background: rgba(9, 0, 20, 0.85); /* Dark Purple, 85% opacity */
+    backdrop-filter: blur(12px);      /* Blurs the content behind it */
+    
+    /* THE NEON BORDER */
+    border-bottom: 1px solid rgba(217, 70, 239, 0.1); /* Faint pink/purple line */
+    z-index: 1000;    /* Ensures it stays on top of everything */
+}
+
+/* Flexbox container to separate Logo (Left) and Links (Right) */
+.nav-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* The Logo Style */
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-head);
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* The Links Container */
+.nav-links {
+    display: flex;
+    gap: 2.5rem;      /* Space between the words */
+    list-style: none; /* Removes bullet points */
+}
+
+/* The Individual Links */
+.nav-links a {
+    color: var(--text-body);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+/* The Glowing Hover Effect */
+.nav-links a:hover {
+    color: var(--accent); /* Turns Neon Pink/Purple */
+    text-shadow: 0 0 10px rgba(217, 70, 239, 0.6); /* Adds the light glow */
+}
+body {
+    background-color: var(--bg-main);
+    color: var(--text-body);
+    font-family: var(--font-main);
+    line-height: 1.6;
+}
+
+/* Helper class to push content down so it doesn't hide behind navbar */
+.page-content {
+    padding-top: 120px;
+    min-height: 100vh; /* Ensures footer stays at bottom */
+}
+
+h1, h2, h3 { color: var(--text-head); line-height: 1.1; }
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.hero span { color: var(--accent); }
+
+.hero p {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: var(--accent);
+    color: var(--bg-main);
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+.btn:hover { transform: translateY(-2px); }
+
+/* --- WORK GRID --- */
+.work { padding: 5rem 0; }
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    border-left: 5px solid var(--accent);
+    padding-left: 1rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.card:hover { border-color: var(--accent); }
+
+.card h3 { margin-bottom: 0.5rem; }
+
+.tech-tag {
+    font-size: 0.8rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+/* --- FOOTER --- */
+footer {
+    padding: 4rem 0;
+    text-align: center;
+    border-top: 1px solid var(--bg-card);
+}
+/* --- FUTURISTIC GLOW EFFECTS --- */
+
+/* Make the button glow like a neon light */
+.btn {
+    box-shadow: 0 0 10px rgba(217, 70, 239, 0.3); /* Soft purple glow */
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(217, 70, 239, 0.7); /* Stronger glow on hover */
+}
+
+/* Make cards glow on hover */
+.card {
+    border: 1px solid rgba(217, 70, 239, 0.1); /* Very faint border */
+}
+
+.card:hover {
+    border-color: var(--accent);
+    box-shadow: 0 0 15px rgba(217, 70, 239, 0.2); /* Subtle glow around the card */
+}
+
+/* Make the tech tags look like holographic text */
+.tech-tag {
+    text-shadow: 0 0 5px rgba(217, 70, 239, 0.5);
+}
